@@ -21,7 +21,7 @@ dependencies:
   get_storage: ^2.1.1
   language_picker: ^0.4.3
   dropdown_search: ^5.0.6
-  google_fonts: ^2.1.0
+  google_fonts: ^4.0.0
 
 dev_dependencies:
   flutter_test:
