@@ -1,3 +1,10 @@
-import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/get.dart';
 
-class MainController extends GetxController {}
+class MainController extends GetxController {
+  var selectedLanguage = "TR".obs;
+
+  void changeLanguage(String language) {
+    selectedLanguage.value = language;
+    print(selectedLanguage.value);
+  }
+}

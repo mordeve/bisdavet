@@ -1,3 +1,4 @@
+import 'package:bisdavet/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -6,43 +7,45 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('BiS Davet', style: TextStyle(fontSize: 32)),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Welcome to BiS Davet',
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
+      backgroundColor: Colors.white70,
+      body: Column(
+        children: [
+          const CustomAppBar(title: "BiSDavet", gradientColors: [
+            Color.fromRGBO(241, 185, 255, 0.1),
+            Color.fromRGBO(241, 185, 255, 0.01),
+            Color.fromRGBO(183, 194, 255, 0.1),
+            Color.fromRGBO(247, 244, 253, 0.5),
+            Color(0xFFF7F4FD),
+          ]),
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const <Widget>[
+                SizedBox(height: 20),
+                Text(
+                  'Modern Davetiye Sistemi',
+                  style: TextStyle(
+                    fontSize: 24,
+                  ),
+                ),
+                SizedBox(height: 40),
+                Text(
+                  'Davetiyenizi oluşturun ve paylaşın.',
+                  style: TextStyle(
+                    fontSize: 16,
+                  ),
+                ),
+                SizedBox(height: 20),
+                Text(
+                  'Davetlileriniz davetiyenizi görüntüleyebilir ve yanıtlayabilir.',
+                  style: TextStyle(
+                    fontSize: 16,
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(height: 20),
-            const Text(
-              'Your source for modern invitations',
-              style: TextStyle(
-                fontSize: 16,
-              ),
-            ),
-            const SizedBox(height: 40),
-            ElevatedButton(
-              onPressed: () {
-                // Add functionality for the button here
-              },
-              style: ElevatedButton.styleFrom(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
-              ),
-              child: const Text(
-                'Get Started',
-                style: TextStyle(fontSize: 18),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
