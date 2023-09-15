@@ -1,1 +1,6 @@
-{"app_name":"bisdavet","version":"1.0.0","build_number":"1","package_name":"bisdavet"}
+{
+    "app_name": "visdavet",
+    "version": "1.0.0",
+    "build_number": "1",
+    "package_name": "visdavet"
+}

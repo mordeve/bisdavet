@@ -1,5 +1,9 @@
-import 'package:bisdavet/widgets/custom_app_bar.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:visdavet/utils/colors.dart';
+import 'package:visdavet/utils/constants.dart';
+import 'package:visdavet/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:visdavet/widgets/custom_drawer.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -8,44 +12,103 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white70,
-      body: Column(
-        children: [
-          const CustomAppBar(title: "BiSDavet", gradientColors: [
-            Color.fromRGBO(241, 185, 255, 0.1),
-            Color.fromRGBO(241, 185, 255, 0.01),
-            Color.fromRGBO(183, 194, 255, 0.1),
-            Color.fromRGBO(247, 244, 253, 0.5),
-            Color(0xFFF7F4FD),
-          ]),
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
-                SizedBox(height: 20),
-                Text(
-                  'Modern Davetiye Sistemi',
-                  style: TextStyle(
-                    fontSize: 24,
+      drawer: const CustomDrawer(),
+      body: GestureDetector(
+        onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const CustomAppBar(title: "VisDavet", gradientColors: [
+                Color.fromRGBO(241, 185, 255, 0.1),
+                Color.fromRGBO(241, 185, 255, 0.01),
+                Color.fromRGBO(183, 194, 255, 0.1),
+                Color.fromRGBO(247, 244, 253, 0.5),
+                Color(0xFFF7F4FD),
+              ]),
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      const SizedBox(height: 20),
+                      Text(
+                        'Neden Biz?',
+                        style: GoogleFonts.poppins(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        child: Text(
+                          Constants.mainText2,
+                          style: GoogleFonts.poppins(
+                            fontSize: 16,
+                            color: AppColors.kTextPrimary,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                    ],
                   ),
                 ),
-                SizedBox(height: 40),
-                Text(
-                  'Davetiyenizi oluşturun ve paylaşın.',
-                  style: TextStyle(
-                    fontSize: 16,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      const SizedBox(height: 20),
+                      Text(
+                        'Neler Sunuyoruz?',
+                        style: GoogleFonts.poppins(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              Constants.mainText5,
+                              style: GoogleFonts.poppins(
+                                fontSize: 16,
+                                color: AppColors.kTextPrimary,
+                              ),
+                            ),
+                            Text(
+                              Constants.mainText6,
+                              style: GoogleFonts.poppins(
+                                fontSize: 16,
+                                color: AppColors.kTextPrimary,
+                              ),
+                            ),
+                            Text(
+                              Constants.mainText7,
+                              style: GoogleFonts.poppins(
+                                fontSize: 16,
+                                color: AppColors.kTextPrimary,
+                              ),
+                              softWrap: true,
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                    ],
                   ),
                 ),
-                SizedBox(height: 20),
-                Text(
-                  'Davetlileriniz davetiyenizi görüntüleyebilir ve yanıtlayabilir.',
-                  style: TextStyle(
-                    fontSize: 16,
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

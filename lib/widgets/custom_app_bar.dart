@@ -1,9 +1,10 @@
-import 'package:bisdavet/logic/main_controller.dart';
+import 'package:visdavet/logic/main_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:visdavet/utils/constants.dart';
 
-class CustomAppBar extends StatelessWidget {
+class CustomAppBar extends StatefulWidget {
   final String title;
   final List<Color> gradientColors;
 
@@ -14,12 +15,18 @@ class CustomAppBar extends StatelessWidget {
   });
 
   @override
+  State<CustomAppBar> createState() => _CustomAppBarState();
+}
+
+class _CustomAppBarState extends State<CustomAppBar> {
+  @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
     return Container(
-      height: 568,
+      height: 500,
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: gradientColors,
+          colors: widget.gradientColors,
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
         ),
@@ -39,81 +46,16 @@ class CustomAppBar extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  children: [
-                    Text(
-                      title,
-                      style: GoogleFonts.permanentMarker(
-                        fontSize: 20.0,
-                        color: const Color(0xFF5d21d2),
-                      ),
-                    ),
-                    const SizedBox(width: 30.0),
-                    Text(
-                      "Hakkımızda",
-                      style: GoogleFonts.poppins(
-                        fontSize: 18.0,
-                        color: const Color(0xFF040222),
-                      ),
-                    ),
-                    const SizedBox(width: 24.0),
-                    Text(
-                      "Vizyonumuz",
-                      style: GoogleFonts.poppins(
-                        fontSize: 18.0,
-                        color: const Color(0xFF040222),
-                      ),
-                    ),
-                    const SizedBox(width: 24.0),
-                    Text(
-                      "Misyonumuz",
-                      style: GoogleFonts.poppins(
-                        fontSize: 18.0,
-                        color: const Color(0xFF040222),
-                      ),
-                    ),
-                    const SizedBox(width: 24.0),
-                    Text(
-                      "İletişim",
-                      style: GoogleFonts.poppins(
-                        fontSize: 18.0,
-                        color: const Color(0xFF040222),
-                      ),
-                    ),
-                  ],
-                ),
-                Obx(
-                  () => SizedBox(
-                    width: 50.0,
-                    child: DropdownButton(
-                      iconSize: 20,
-                      elevation: 16,
-                      underline: Container(
-                        height: 2,
-                        color: const Color(0xFF5d21d2),
-                      ),
-                      value: Get.find<MainController>().selectedLanguage.value,
-                      onChanged: (String? newValue) {
-                        Get.find<MainController>().selectedLanguage.value =
-                            newValue!;
-                        print(Get.find<MainController>().selectedLanguage);
-                      },
-                      items: <String>['TR', 'EN']
-                          .map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(
-                            value,
-                            style: GoogleFonts.poppins(
-                              fontSize: 18.0,
-                              color: const Color(0xFF040222),
-                            ),
-                          ),
-                        );
-                      }).toList(),
-                    ),
+                Text(
+                  widget.title,
+                  style: GoogleFonts.permanentMarker(
+                    fontSize: 20.0,
+                    color: const Color(0xFF5d21d2),
                   ),
                 ),
+                screenSize.width > Constants.maxScreenWidth
+                    ? longToolBar()
+                    : drawerToolBar(),
               ],
             ),
           ),
@@ -121,16 +63,16 @@ class CustomAppBar extends StatelessWidget {
             padding:
                 const EdgeInsets.symmetric(horizontal: 50.0, vertical: 4.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  width: MediaQuery.of(context).size.width / 2 > 500
+                  width: MediaQuery.of(context).size.width / 1.5 > 500
                       ? 500
-                      : MediaQuery.of(context).size.width / 2,
-                  height: 100,
+                      : MediaQuery.of(context).size.width / 1.5,
+                  height: 180,
                   child: Text(
-                    'Lorem ipsum Dolor sit amet',
+                    Constants.slogan,
                     style: GoogleFonts.poppins(
                       fontSize: 36.0,
                       color: const Color(0xFF040222),
@@ -143,23 +85,44 @@ class CustomAppBar extends StatelessWidget {
           ),
           Padding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 50.0, vertical: 12.0),
-            child: Row(
+                const EdgeInsets.symmetric(horizontal: 50.0, vertical: 4.0),
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  width: MediaQuery.of(context).size.width / 1.5 > 500
+                  width: MediaQuery.of(context).size.width / 1.2 > 500
                       ? 500
-                      : MediaQuery.of(context).size.width / 1.5,
-                  height: 150,
+                      : MediaQuery.of(context).size.width / 1.2,
+                  height: 50,
                   child: Text(
-                    'Lorem ipsum Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                    Constants.mainText1,
+                    textAlign: TextAlign.left,
                     style: GoogleFonts.poppins(
-                      fontSize: 16.0,
+                      fontSize: 18.0,
                       color: const Color(0xFF040222),
+                      fontWeight: FontWeight.w500,
                     ),
                     softWrap: true,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10.0),
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width / 1.2 > 500
+                        ? 500
+                        : MediaQuery.of(context).size.width / 1.2,
+                    height: 150,
+                    child: Text(
+                      Constants.mainText2,
+                      textAlign: TextAlign.left,
+                      style: GoogleFonts.poppins(
+                        fontSize: 18.0,
+                        color: const Color(0xFF040222),
+                        fontWeight: FontWeight.w300,
+                      ),
+                      softWrap: true,
+                    ),
                   ),
                 ),
               ],
@@ -167,6 +130,95 @@ class CustomAppBar extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Widget longToolBar() {
+    return Expanded(
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const SizedBox(width: 30.0),
+          Text(
+            "Hakkımızda",
+            style: GoogleFonts.poppins(
+              fontSize: 18.0,
+              color: const Color(0xFF040222),
+            ),
+          ),
+          const SizedBox(width: 24.0),
+          Text(
+            "Hizmetlerimiz",
+            style: GoogleFonts.poppins(
+              fontSize: 18.0,
+              color: const Color(0xFF040222),
+            ),
+          ),
+          const SizedBox(width: 24.0),
+          Text(
+            "Vizyonumuz",
+            style: GoogleFonts.poppins(
+              fontSize: 18.0,
+              color: const Color(0xFF040222),
+            ),
+          ),
+          const SizedBox(width: 24.0),
+          Text(
+            "İletişim",
+            style: GoogleFonts.poppins(
+              fontSize: 18.0,
+              color: const Color(0xFF040222),
+            ),
+          ),
+          Obx(
+            () => Padding(
+              padding: const EdgeInsets.only(left: 50.0),
+              child: SizedBox(
+                width: 50.0,
+                child: DropdownButton(
+                  iconSize: 16,
+                  elevation: 16,
+                  underline: Container(
+                    height: 2,
+                    color: const Color(0xFF5d21d2),
+                  ),
+                  value: Get.find<MainController>().selectedLanguage.value,
+                  onChanged: (String? newValue) {
+                    Get.find<MainController>().changeLanguage(newValue!);
+                  },
+                  items: <String>['TR', 'EN']
+                      .map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(
+                        value,
+                        style: GoogleFonts.poppins(
+                          fontSize: 16.0,
+                          color: const Color(0xFF040222),
+                        ),
+                      ),
+                    );
+                  }).toList(),
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget drawerToolBar() {
+    return IconButton(
+      icon: const Icon(
+        Icons.menu,
+        color: Color(0xFF5d21d2),
+      ),
+      onPressed: () {
+        Scaffold.of(context).openDrawer();
+      },
     );
   }
 }

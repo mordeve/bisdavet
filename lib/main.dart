@@ -1,6 +1,6 @@
-import 'package:bisdavet/utils/bindings.dart';
-import 'package:bisdavet/utils/constants.dart';
-import 'package:bisdavet/utils/routes.dart';
+import 'package:visdavet/utils/bindings.dart';
+import 'package:visdavet/utils/constants.dart';
+import 'package:visdavet/utils/routes.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

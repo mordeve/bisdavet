@@ -17,4 +17,6 @@ class AppColors {
   static Color playButtonBg = const Color(0xFFA65AF1);
   static Color playButtonInner = const Color(0xFFF0EFF0);
   static Color textColor = const Color(0xFF252525);
+
+  static Color kTextPrimary = const Color(0xFF040222);
 }

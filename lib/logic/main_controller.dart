@@ -5,6 +5,5 @@ class MainController extends GetxController {
 
   void changeLanguage(String language) {
     selectedLanguage.value = language;
-    print(selectedLanguage.value);
   }
 }

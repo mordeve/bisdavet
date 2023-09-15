@@ -1,4 +1,4 @@
-import 'package:bisdavet/pages/home_page.dart';
+import 'package:visdavet/pages/home_page.dart';
 import 'package:get/get.dart';
 
 abstract class MyRoute {
