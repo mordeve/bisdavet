@@ -10,6 +10,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+    final textFontSizeHeader2 = screenSize.width >= 400 ? 24.0 : 18.0;
+
     return Scaffold(
       backgroundColor: Colors.white70,
       drawer: const CustomDrawer(),
@@ -35,7 +38,7 @@ class HomePage extends StatelessWidget {
                       Text(
                         'Neden Biz?',
                         style: GoogleFonts.poppins(
-                          fontSize: 24,
+                          fontSize: textFontSizeHeader2,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -65,7 +68,7 @@ class HomePage extends StatelessWidget {
                       Text(
                         'Neler Sunuyoruz?',
                         style: GoogleFonts.poppins(
-                          fontSize: 24,
+                          fontSize: textFontSizeHeader2,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -73,8 +76,8 @@ class HomePage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16.0),
                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.max,
                           children: [
                             Text(
                               Constants.mainText5,

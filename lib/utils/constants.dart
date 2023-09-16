@@ -13,9 +13,9 @@ class Constants {
       "Dijital davetiyelerimiz, doğal kaynakları korumanın yanı sıra etkinliklerinizi daha kolay ve özgün hale getiriyor.";
 
   static const String mainText5 =
-      "⏺ Özel web siteleri ile kişiye özel davetler.";
+      "- Özel web siteleri ile kişiye özel davetler.";
   static const String mainText6 =
-      "⏺ Eğlenceli ve etkileyici dijital davet tasarımları.";
+      "- Eğlenceli ve etkileyici dijital davet tasarımları.";
   static const String mainText7 =
-      "⏺ Anlık güncellemeler ve misafirlerinizle etkileşim sağlayan özellikler.";
+      "- Anlık güncellemeler ve misafirlerinizle etkileşim sağlayan özellikler.";
 }

@@ -22,6 +22,8 @@ class _CustomAppBarState extends State<CustomAppBar> {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
+    final textFontSizeHeader = screenSize.width >= 400 ? 34.0 : 26.0;
+    final textFontSizeMain = screenSize.width >= 400 ? 18.0 : 16.0;
     return Container(
       height: 500,
       decoration: BoxDecoration(
@@ -46,22 +48,26 @@ class _CustomAppBarState extends State<CustomAppBar> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  widget.title,
-                  style: GoogleFonts.permanentMarker(
-                    fontSize: 20.0,
-                    color: const Color(0xFF5d21d2),
+                SizedBox(
+                  width: 80,
+                  child: Text(
+                    widget.title,
+                    style: GoogleFonts.permanentMarker(
+                      fontSize: 20.0,
+                      color: const Color(0xFF5d21d2),
+                    ),
                   ),
                 ),
                 screenSize.width > Constants.maxScreenWidth
                     ? longToolBar()
                     : drawerToolBar(),
+                if (screenSize.width > 780) (const SizedBox(width: 80.0)),
               ],
             ),
           ),
           Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 50.0, vertical: 4.0),
+            padding: const EdgeInsets.only(
+                top: 20.0, left: 20, right: 10, bottom: 0.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,11 +76,11 @@ class _CustomAppBarState extends State<CustomAppBar> {
                   width: MediaQuery.of(context).size.width / 1.5 > 500
                       ? 500
                       : MediaQuery.of(context).size.width / 1.5,
-                  height: 180,
+                  height: 170,
                   child: Text(
                     Constants.slogan,
                     style: GoogleFonts.poppins(
-                      fontSize: 36.0,
+                      fontSize: textFontSizeHeader,
                       color: const Color(0xFF040222),
                       fontWeight: FontWeight.w600,
                     ),
@@ -84,22 +90,21 @@ class _CustomAppBarState extends State<CustomAppBar> {
             ),
           ),
           Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 50.0, vertical: 4.0),
+            padding: const EdgeInsets.only(left: 20.0, top: 4.0, bottom: 8.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  width: MediaQuery.of(context).size.width / 1.2 > 500
+                  width: screenSize.width / 1.2 > 500
                       ? 500
-                      : MediaQuery.of(context).size.width / 1.2,
+                      : screenSize.width / 1.2,
                   height: 50,
                   child: Text(
                     Constants.mainText1,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.poppins(
-                      fontSize: 18.0,
+                      fontSize: textFontSizeMain,
                       color: const Color(0xFF040222),
                       fontWeight: FontWeight.w500,
                     ),
@@ -107,17 +112,20 @@ class _CustomAppBarState extends State<CustomAppBar> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10.0),
+                  padding: const EdgeInsets.only(
+                    top: 12.0,
+                    bottom: 4.0,
+                  ),
                   child: SizedBox(
-                    width: MediaQuery.of(context).size.width / 1.2 > 500
+                    width: screenSize.width / 1.2 > 500
                         ? 500
-                        : MediaQuery.of(context).size.width / 1.2,
+                        : screenSize.width / 1.2,
                     height: 150,
                     child: Text(
                       Constants.mainText2,
                       textAlign: TextAlign.left,
                       style: GoogleFonts.poppins(
-                        fontSize: 18.0,
+                        fontSize: textFontSizeMain - 1,
                         color: const Color(0xFF040222),
                         fontWeight: FontWeight.w300,
                       ),
