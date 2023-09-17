@@ -18,4 +18,14 @@ class Constants {
       "- Eğlenceli ve etkileyici dijital davet tasarımları.";
   static const String mainText7 =
       "- Anlık güncellemeler ve misafirlerinizle etkileşim sağlayan özellikler.";
+
+  static const String treeText1 =
+      "Türkiye'de yıllık ortalama 570 bin düğün yapıldığını biliyor muydunuz?	 ";
+  static const String treeText2 =
+      "Peki düğünlerde harcanan davetiye kağıtları için yıllık yaklaşık olarak  ";
+
+  static const String treeText3 = "80 bin ";
+  static const String treeText4 = "adet ağaç kesildiğini...";
+  static const String treeText5 =
+      "İşte tam bu noktada VisDavet ekibi olarak sizlere sadece davetiye masrafından kurtulma fırsatı sunmuyoruz. Bunun yanında doğaya katkı sağlamak ve gelecek nesillere daha yeşil bir hayat vermek sizlerin elinde.";
 }
