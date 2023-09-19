@@ -6,17 +6,22 @@ import 'package:flutter/material.dart';
 import 'package:visdavet/widgets/custom_drawer.dart';
 import 'package:visdavet/widgets/footer.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     final textFontSizeHeader2 = screenSize.width >= 400 ? 24.0 : 20.0;
 
     return Scaffold(
-      backgroundColor: Colors.white70,
       drawer: const CustomDrawer(),
+      backgroundColor: Colors.white70,
       body: GestureDetector(
         onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
         child: SingleChildScrollView(

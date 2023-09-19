@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:visdavet/logic/main_controller.dart';
 import 'package:visdavet/utils/colors.dart';
 
+import '../utils/routes.dart';
+
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({Key? key}) : super(key: key);
 
@@ -51,6 +53,18 @@ class CustomDrawer extends StatelessWidget {
           ),
           ListTile(
             title: Text(
+              'Anasayfa',
+              style: TextStyle(
+                fontSize: 18,
+                color: AppColors.kTextPrimary,
+              ),
+            ),
+            onTap: () {
+              Get.rootDelegate.offNamed(MyRoute.main);
+            },
+          ),
+          ListTile(
+            title: Text(
               'Hakkımızda',
               style: TextStyle(
                 fontSize: 18,
@@ -58,7 +72,7 @@ class CustomDrawer extends StatelessWidget {
               ),
             ),
             onTap: () {
-              Navigator.pop(context);
+              Get.rootDelegate.offNamed(MyRoute.aboutPage);
             },
           ),
           ListTile(
@@ -70,7 +84,7 @@ class CustomDrawer extends StatelessWidget {
               ),
             ),
             onTap: () {
-              Navigator.pop(context);
+              Get.rootDelegate.offNamed(MyRoute.servicesPage);
             },
           ),
           ListTile(
