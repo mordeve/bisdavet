@@ -109,7 +109,6 @@ class _CustomAppBarState extends State<CustomAppBar> {
                     style: TextStyle(
                       fontSize: textFontSizeMain,
                       color: const Color(0xFF040222),
-                      fontWeight: FontWeight.w500,
                     ),
                     softWrap: true,
                   ),
@@ -130,7 +129,6 @@ class _CustomAppBarState extends State<CustomAppBar> {
                       style: TextStyle(
                         fontSize: textFontSizeMain - 1,
                         color: const Color(0xFF040222),
-                        fontWeight: FontWeight.w300,
                       ),
                       softWrap: true,
                     ),

@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:visdavet/utils/colors.dart';
 import 'package:visdavet/utils/constants.dart';
 import 'package:visdavet/utils/utils.dart';
@@ -80,6 +79,7 @@ class _HomePageState extends State<HomePage> {
                                 style: TextStyle(
                                   fontSize: 18,
                                   color: AppColors.kTextPrimary,
+                                  fontWeight: FontWeight.w500,
                                 ),
                                 children: <TextSpan>[
                                   TextSpan(
@@ -97,8 +97,12 @@ class _HomePageState extends State<HomePage> {
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  const TextSpan(
+                                  TextSpan(
                                     text: Constants.treeText4,
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      color: AppColors.kTextPrimary,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -109,6 +113,7 @@ class _HomePageState extends State<HomePage> {
                               style: TextStyle(
                                 fontSize: 18,
                                 color: AppColors.kTextPrimary,
+                                fontWeight: FontWeight.normal,
                               ),
                               softWrap: true,
                             ),
@@ -143,6 +148,7 @@ class _HomePageState extends State<HomePage> {
                             style: TextStyle(
                               fontSize: 16,
                               color: AppColors.kTextPrimary,
+                              fontWeight: FontWeight.normal,
                             ),
                           ),
                         ),

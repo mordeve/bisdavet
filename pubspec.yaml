@@ -40,6 +40,5 @@ flutter:
     - family: Poppins
       fonts:
         - asset: assets/fonts/Poppins/Poppins-Regular.ttf
-        - asset: assets/fonts/Poppins/Poppins-Black.ttf
 
   uses-material-design: true
