@@ -25,9 +25,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialBinding: MainBinding(),
       fallbackLocale: const Locale("tr"),
-      theme: ThemeData(
-        primarySwatch: Colors.grey,
-      ),
+      theme: ThemeData(primarySwatch: Colors.grey, fontFamily: 'Poppins'),
       themeMode: ThemeMode.dark,
     );
   }

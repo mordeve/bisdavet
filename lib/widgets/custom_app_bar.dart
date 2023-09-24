@@ -82,7 +82,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                   height: 170,
                   child: Text(
                     Constants.slogan,
-                    style: GoogleFonts.poppins(
+                    style: TextStyle(
                       fontSize: textFontSizeHeader,
                       color: const Color(0xFF040222),
                       fontWeight: FontWeight.w600,
@@ -106,7 +106,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                   child: Text(
                     Constants.mainText1,
                     textAlign: TextAlign.left,
-                    style: GoogleFonts.poppins(
+                    style: TextStyle(
                       fontSize: textFontSizeMain,
                       color: const Color(0xFF040222),
                       fontWeight: FontWeight.w500,
@@ -127,7 +127,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                     child: Text(
                       Constants.mainText2,
                       textAlign: TextAlign.left,
-                      style: GoogleFonts.poppins(
+                      style: TextStyle(
                         fontSize: textFontSizeMain - 1,
                         color: const Color(0xFF040222),
                         fontWeight: FontWeight.w300,

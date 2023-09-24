@@ -59,7 +59,7 @@ class ServicesPage extends StatelessWidget {
                             width: MediaQuery.of(context).size.width * 0.8,
                             child: Text(
                               Constants.servicesText1,
-                              style: GoogleFonts.poppins(
+                              style: TextStyle(
                                 fontSize: kTextSize + 4,
                                 color: AppColors.kTextPrimary,
                               ),
@@ -73,7 +73,7 @@ class ServicesPage extends StatelessWidget {
                         child: RichText(
                           text: TextSpan(
                             text: Constants.servicesText2,
-                            style: GoogleFonts.poppins(
+                            style: TextStyle(
                               fontSize: kTextSize,
                               color: AppColors.kTextPrimary,
                               fontWeight: FontWeight.bold,
@@ -87,7 +87,7 @@ class ServicesPage extends StatelessWidget {
                           children: [
                             TextSpan(
                               text: Constants.servicesText3,
-                              style: GoogleFonts.poppins(
+                              style: TextStyle(
                                 fontSize: kTextSize,
                                 color: AppColors.kTextPrimary,
                               ),
@@ -100,7 +100,7 @@ class ServicesPage extends StatelessWidget {
                         child: RichText(
                           text: TextSpan(
                             text: Constants.servicesText4,
-                            style: GoogleFonts.poppins(
+                            style: TextStyle(
                               fontSize: kTextSize,
                               color: AppColors.kTextPrimary,
                               fontWeight: FontWeight.bold,
@@ -111,7 +111,7 @@ class ServicesPage extends StatelessWidget {
                       RichText(
                         text: TextSpan(
                           text: Constants.servicesText5,
-                          style: GoogleFonts.poppins(
+                          style: TextStyle(
                             fontSize: kTextSize,
                             color: AppColors.kTextPrimary,
                           ),
@@ -122,7 +122,7 @@ class ServicesPage extends StatelessWidget {
                         child: RichText(
                           text: TextSpan(
                             text: Constants.servicesText6,
-                            style: GoogleFonts.poppins(
+                            style: TextStyle(
                               fontSize: kTextSize,
                               color: AppColors.kTextPrimary,
                               fontWeight: FontWeight.bold,
@@ -133,7 +133,7 @@ class ServicesPage extends StatelessWidget {
                       RichText(
                         text: TextSpan(
                           text: Constants.servicesText7,
-                          style: GoogleFonts.poppins(
+                          style: TextStyle(
                             fontSize: kTextSize,
                             color: AppColors.kTextPrimary,
                           ),
@@ -144,7 +144,7 @@ class ServicesPage extends StatelessWidget {
                         child: RichText(
                           text: TextSpan(
                             text: Constants.servicesText8,
-                            style: GoogleFonts.poppins(
+                            style: TextStyle(
                               fontSize: kTextSize,
                               color: AppColors.kTextPrimary,
                               fontWeight: FontWeight.bold,
@@ -155,7 +155,7 @@ class ServicesPage extends StatelessWidget {
                       RichText(
                         text: TextSpan(
                           text: Constants.servicesText9,
-                          style: GoogleFonts.poppins(
+                          style: TextStyle(
                             fontSize: kTextSize,
                             color: AppColors.kTextPrimary,
                           ),
@@ -166,7 +166,7 @@ class ServicesPage extends StatelessWidget {
                         child: RichText(
                           text: TextSpan(
                             text: Constants.servicesText10,
-                            style: GoogleFonts.poppins(
+                            style: TextStyle(
                               fontSize: kTextSize,
                               color: AppColors.kTextPrimary,
                               fontWeight: FontWeight.bold,
@@ -177,7 +177,7 @@ class ServicesPage extends StatelessWidget {
                       RichText(
                         text: TextSpan(
                           text: Constants.servicesText11,
-                          style: GoogleFonts.poppins(
+                          style: TextStyle(
                             fontSize: kTextSize,
                             color: AppColors.kTextPrimary,
                           ),
@@ -191,7 +191,7 @@ class ServicesPage extends StatelessWidget {
                             width: MediaQuery.of(context).size.width * 0.8,
                             child: Text(
                               Constants.servicesText12,
-                              style: GoogleFonts.poppins(
+                              style: TextStyle(
                                 fontSize: kTextSize + 4,
                                 color: AppColors.kTextPrimary,
                               ),
@@ -203,16 +203,13 @@ class ServicesPage extends StatelessWidget {
                       const SizedBox(height: 20),
                       Center(
                         child: RichText(
+                          textAlign: TextAlign.center,
                           text: TextSpan(
-                            children: [
-                              TextSpan(
-                                text: Constants.servicesText13,
-                                style: GoogleFonts.poppins(
-                                  fontSize: kTextSize - 4,
-                                  color: AppColors.kTextPrimary,
-                                ),
-                              ),
-                            ],
+                            text: Constants.servicesText13,
+                            style: TextStyle(
+                              fontSize: kTextSize - 4,
+                              color: AppColors.kTextPrimary,
+                            ),
                           ),
                         ),
                       ),

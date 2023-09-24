@@ -77,8 +77,8 @@ class CustomDrawer extends StatelessWidget {
                     launchInstagram("visdavet");
                   },
                   child: Container(
-                    width: 26,
-                    height: 26,
+                    width: 22,
+                    height: 22,
                     decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: NetworkImage(
@@ -89,22 +89,22 @@ class CustomDrawer extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 10),
-                InkWell(
-                  onTap: () {
-                    // launchYoutube("visdavet");
-                  },
-                  child: Container(
-                    width: 25.60 * 1.3,
-                    height: 17.71 * 1.3,
-                    decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: NetworkImage(
-                            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/2560px-YouTube_full-color_icon_%282017%29.svg.png"),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                ),
+                // InkWell(
+                //   onTap: () {
+                //     // launchYoutube("visdavet");
+                //   },
+                //   child: Container(
+                //     width: 25.60 * 1.3,
+                //     height: 17.71 * 1.3,
+                //     decoration: const BoxDecoration(
+                //       image: DecorationImage(
+                //         image: NetworkImage(
+                //             "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/2560px-YouTube_full-color_icon_%282017%29.svg.png"),
+                //         fit: BoxFit.cover,
+                //       ),
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),
@@ -135,7 +135,7 @@ class CustomDrawer extends StatelessWidget {
                           value: value,
                           child: Text(
                             value,
-                            style: GoogleFonts.poppins(
+                            style: TextStyle(
                               fontSize: 14.0,
                               color: const Color(0xFF040222),
                             ),

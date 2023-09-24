@@ -100,4 +100,7 @@ class Constants {
     "Vizyonumuz": "/vision",
     "İletişim": "/contact",
   };
+
+  static const String sloganText4 =
+      "Daha fazla bilgi almak için hemen iletişime geçin!";
 }

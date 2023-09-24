@@ -58,7 +58,7 @@ class AboutPage extends StatelessWidget {
                             width: MediaQuery.of(context).size.width * 0.8,
                             child: Text(
                               Constants.aboutText1,
-                              style: GoogleFonts.poppins(
+                              style: TextStyle(
                                 fontSize: kTextSize + 4,
                                 color: AppColors.kTextPrimary,
                               ),
@@ -70,7 +70,7 @@ class AboutPage extends StatelessWidget {
                       const SizedBox(height: 20),
                       Text(
                         Constants.aboutText2,
-                        style: GoogleFonts.poppins(
+                        style: TextStyle(
                           fontSize: kTextSize,
                           color: AppColors.kTextPrimary,
                         ),
@@ -82,7 +82,7 @@ class AboutPage extends StatelessWidget {
                           children: [
                             TextSpan(
                               text: Constants.aboutText3,
-                              style: GoogleFonts.poppins(
+                              style: TextStyle(
                                 fontSize: kTextSize,
                                 color: AppColors.kTextPrimary,
                                 fontWeight: FontWeight.bold,
@@ -90,7 +90,7 @@ class AboutPage extends StatelessWidget {
                             ),
                             TextSpan(
                               text: Constants.aboutText4,
-                              style: GoogleFonts.poppins(
+                              style: TextStyle(
                                 fontSize: kTextSize,
                                 color: AppColors.kTextPrimary,
                               ),
@@ -104,7 +104,7 @@ class AboutPage extends StatelessWidget {
                           children: [
                             TextSpan(
                               text: Constants.aboutText5,
-                              style: GoogleFonts.poppins(
+                              style: TextStyle(
                                 fontSize: kTextSize,
                                 color: AppColors.kTextPrimary,
                                 fontWeight: FontWeight.bold,
@@ -112,7 +112,7 @@ class AboutPage extends StatelessWidget {
                             ),
                             TextSpan(
                               text: Constants.aboutText6,
-                              style: GoogleFonts.poppins(
+                              style: TextStyle(
                                 fontSize: kTextSize,
                                 color: AppColors.kTextPrimary,
                               ),
@@ -126,7 +126,7 @@ class AboutPage extends StatelessWidget {
                           children: [
                             TextSpan(
                               text: Constants.aboutText7,
-                              style: GoogleFonts.poppins(
+                              style: TextStyle(
                                 fontSize: kTextSize,
                                 color: AppColors.kTextPrimary,
                                 fontWeight: FontWeight.bold,
@@ -134,7 +134,7 @@ class AboutPage extends StatelessWidget {
                             ),
                             TextSpan(
                               text: Constants.aboutText8,
-                              style: GoogleFonts.poppins(
+                              style: TextStyle(
                                 fontSize: kTextSize,
                                 color: AppColors.kTextPrimary,
                               ),
@@ -148,7 +148,7 @@ class AboutPage extends StatelessWidget {
                           children: [
                             TextSpan(
                               text: Constants.aboutText9,
-                              style: GoogleFonts.poppins(
+                              style: TextStyle(
                                 fontSize: kTextSize,
                                 color: AppColors.kTextPrimary,
                                 fontWeight: FontWeight.bold,
@@ -156,14 +156,14 @@ class AboutPage extends StatelessWidget {
                             ),
                             TextSpan(
                               text: "\n\n",
-                              style: GoogleFonts.poppins(
+                              style: TextStyle(
                                 fontSize: kTextSize,
                                 color: AppColors.kTextPrimary,
                               ),
                             ),
                             TextSpan(
                               text: Constants.aboutText10,
-                              style: GoogleFonts.poppins(
+                              style: TextStyle(
                                 fontSize: kTextSize,
                                 color: AppColors.kTextPrimary,
                               ),

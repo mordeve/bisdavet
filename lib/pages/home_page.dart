@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             Text(
                               Constants.treeText1,
-                              style: GoogleFonts.poppins(
+                              style: TextStyle(
                                 fontSize: 18,
                                 color: AppColors.kTextPrimary,
                                 fontWeight: FontWeight.bold,
@@ -75,21 +75,24 @@ class _HomePageState extends State<HomePage> {
                               softWrap: true,
                             ),
                             const SizedBox(height: 10),
-                            // a richtext widget to display multiple text styles
                             RichText(
                               text: TextSpan(
-                                style: GoogleFonts.poppins(
-                                  fontSize: 16,
+                                style: TextStyle(
+                                  fontSize: 18,
                                   color: AppColors.kTextPrimary,
                                 ),
                                 children: <TextSpan>[
-                                  const TextSpan(
+                                  TextSpan(
                                     text: Constants.treeText2,
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      color: AppColors.kTextPrimary,
+                                    ),
                                   ),
                                   TextSpan(
                                     text: Constants.treeText3,
-                                    style: GoogleFonts.poppins(
-                                      fontSize: 16,
+                                    style: TextStyle(
+                                      fontSize: 18,
                                       color: AppColors.kTextPrimary,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -103,8 +106,8 @@ class _HomePageState extends State<HomePage> {
                             const SizedBox(height: 16),
                             Text(
                               Constants.treeText5,
-                              style: GoogleFonts.poppins(
-                                fontSize: 16,
+                              style: TextStyle(
+                                fontSize: 18,
                                 color: AppColors.kTextPrimary,
                               ),
                               softWrap: true,
@@ -127,7 +130,7 @@ class _HomePageState extends State<HomePage> {
                         const SizedBox(height: 20),
                         Text(
                           'Neden Biz?',
-                          style: GoogleFonts.poppins(
+                          style: TextStyle(
                             fontSize: textFontSizeHeader2,
                             fontWeight: FontWeight.bold,
                           ),
@@ -137,7 +140,7 @@ class _HomePageState extends State<HomePage> {
                           padding: const EdgeInsets.symmetric(horizontal: 16.0),
                           child: Text(
                             Constants.mainText3,
-                            style: GoogleFonts.poppins(
+                            style: TextStyle(
                               fontSize: 16,
                               color: AppColors.kTextPrimary,
                             ),
@@ -160,7 +163,7 @@ class _HomePageState extends State<HomePage> {
                         const SizedBox(height: 20),
                         Text(
                           'Neler Sunuyoruz?',
-                          style: GoogleFonts.poppins(
+                          style: TextStyle(
                             fontSize: textFontSizeHeader2,
                             fontWeight: FontWeight.bold,
                           ),
@@ -174,21 +177,21 @@ class _HomePageState extends State<HomePage> {
                             children: [
                               Text(
                                 Constants.mainText5,
-                                style: GoogleFonts.poppins(
+                                style: TextStyle(
                                   fontSize: 16,
                                   color: AppColors.kTextPrimary,
                                 ),
                               ),
                               Text(
                                 Constants.mainText6,
-                                style: GoogleFonts.poppins(
+                                style: TextStyle(
                                   fontSize: 16,
                                   color: AppColors.kTextPrimary,
                                 ),
                               ),
                               Text(
                                 Constants.mainText7,
-                                style: GoogleFonts.poppins(
+                                style: TextStyle(
                                   fontSize: 16,
                                   color: AppColors.kTextPrimary,
                                 ),
@@ -222,7 +225,7 @@ class _HomePageState extends State<HomePage> {
                       Get.rootDelegate.toNamed("/services");
                     },
                     style: ElevatedButton.styleFrom(
-                      elevation: 4,
+                      elevation: 0,
                       backgroundColor: AppColors.mainColor2,
                       padding: const EdgeInsets.symmetric(
                         horizontal: 32,
@@ -232,10 +235,10 @@ class _HomePageState extends State<HomePage> {
                         borderRadius: BorderRadius.circular(50),
                       ),
                     ),
-                    child: const Text(
+                    child: Text(
                       "Hizmetlerimiz ve Servislerimiz Hakkında Daha Fazla Bilgi Almak İçin Tıklayın",
                       style: TextStyle(
-                        fontSize: kTextSize,
+                        fontSize: kTextSize - 2,
                         color: Colors.white,
                       ),
                       textAlign: TextAlign.center,
@@ -251,7 +254,7 @@ class _HomePageState extends State<HomePage> {
                     width: screenSize.width * 0.8,
                     child: Text(
                       Constants.sloganText2,
-                      style: GoogleFonts.poppins(
+                      style: TextStyle(
                         fontSize: kTextSize + 2,
                         color: AppColors.kTextPrimary,
                       ),
@@ -268,7 +271,7 @@ class _HomePageState extends State<HomePage> {
                     width: screenSize.width * 0.8,
                     child: Text(
                       Constants.sloganText3,
-                      style: GoogleFonts.poppins(
+                      style: TextStyle(
                         fontSize: kTextSize + 2,
                         color: AppColors.kTextPrimary,
                       ),
@@ -278,6 +281,24 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               const SizedBox(height: 20),
+              // Daha fazla bilgi almak için hemen bizimle iletişime geçin
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: screenSize.width * 0.8,
+                    child: Text(
+                      Constants.sloganText4,
+                      style: TextStyle(
+                        fontSize: kTextSize,
+                        color: AppColors.kTextPrimary,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8.0),
               // add our social media links
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -287,8 +308,8 @@ class _HomePageState extends State<HomePage> {
                       launchInstagram("visdavet");
                     },
                     child: Container(
-                      width: 28,
-                      height: 28,
+                      width: 20,
+                      height: 20,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: NetworkImage(
@@ -298,23 +319,23 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  const SizedBox(width: 4.0),
-                  InkWell(
-                    onTap: () {
-                      // launchYoutube("visdavet");
-                    },
-                    child: Container(
-                      width: 25.60 * 1.5,
-                      height: 17.71 * 1.5,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: NetworkImage(
-                              "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/2560px-YouTube_full-color_icon_%282017%29.svg.png"),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                  ),
+                  // const SizedBox(width: 4.0),
+                  // InkWell(
+                  //   onTap: () {
+                  //     // launchYoutube("visdavet");
+                  //   },
+                  //   child: Container(
+                  //     width: 25.60 * 1.1,
+                  //     height: 17.71 * 1.1,
+                  //     decoration: const BoxDecoration(
+                  //       image: DecorationImage(
+                  //         image: NetworkImage(
+                  //             "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/2560px-YouTube_full-color_icon_%282017%29.svg.png"),
+                  //         fit: BoxFit.cover,
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                 ],
               ),
               const SizedBox(height: 20),

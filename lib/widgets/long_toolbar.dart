@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:visdavet/logic/main_controller.dart';
 import 'package:visdavet/utils/colors.dart';
 import 'package:visdavet/utils/constants.dart';
-import 'package:visdavet/utils/routes.dart';
 
 class LongToolbar extends StatelessWidget {
   const LongToolbar({
@@ -54,7 +52,7 @@ class LongToolbar extends StatelessWidget {
                       value: value,
                       child: Text(
                         value,
-                        style: GoogleFonts.poppins(
+                        style: TextStyle(
                           fontSize: 16.0,
                           color: const Color(0xFF040222),
                         ),
@@ -77,7 +75,7 @@ class LongToolbar extends StatelessWidget {
         onPressed: () => Get.rootDelegate.offNamed(route),
         child: Text(
           title,
-          style: GoogleFonts.poppins(
+          style: TextStyle(
             fontSize: 18.0,
             color: isSelected ? AppColors.kPurple : const Color(0xFF040222),
           ),
