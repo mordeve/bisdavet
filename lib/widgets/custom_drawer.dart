@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:visdavet/logic/main_controller.dart';
 import 'package:visdavet/utils/colors.dart';
+import 'package:visdavet/utils/constants.dart';
+import 'package:visdavet/utils/utils.dart';
 
 import '../utils/routes.dart';
 
@@ -11,6 +13,8 @@ class CustomDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final MainController mainController = Get.find<MainController>();
+
     return Drawer(
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
@@ -43,7 +47,7 @@ class CustomDrawer extends StatelessWidget {
                 Text(
                   'VisDavet',
                   style: GoogleFonts.permanentMarker(
-                    fontSize: 20.0,
+                    fontSize: 24.0,
                     color: const Color(0xFF5d21d2),
                   ),
                 ),
@@ -51,65 +55,58 @@ class CustomDrawer extends StatelessWidget {
               ],
             ),
           ),
-          ListTile(
-            title: Text(
-              'Anasayfa',
-              style: TextStyle(
-                fontSize: 18,
-                color: AppColors.kTextPrimary,
-              ),
-            ),
-            onTap: () {
-              Get.rootDelegate.offNamed(MyRoute.main);
+          ...List<Widget>.generate(
+            Constants.sections.length,
+            (index) {
+              return sectionItem(
+                Constants.sections.keys.toList()[index],
+                Constants.sections.values.toList()[index],
+                mainController.selectedRoute.value ==
+                    Constants.sections.values.toList()[index],
+              );
             },
           ),
-          ListTile(
-            title: Text(
-              'Hakkımızda',
-              style: TextStyle(
-                fontSize: 18,
-                color: AppColors.kTextPrimary,
-              ),
+          const SizedBox(height: 20),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                  onTap: () {
+                    launchInstagram("visdavet");
+                  },
+                  child: Container(
+                    width: 26,
+                    height: 26,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage(
+                            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                InkWell(
+                  onTap: () {
+                    // launchYoutube("visdavet");
+                  },
+                  child: Container(
+                    width: 25.60 * 1.3,
+                    height: 17.71 * 1.3,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage(
+                            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/2560px-YouTube_full-color_icon_%282017%29.svg.png"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
-            onTap: () {
-              Get.rootDelegate.offNamed(MyRoute.aboutPage);
-            },
-          ),
-          ListTile(
-            title: Text(
-              'Hizmetlerimiz',
-              style: TextStyle(
-                fontSize: 18,
-                color: AppColors.kTextPrimary,
-              ),
-            ),
-            onTap: () {
-              Get.rootDelegate.offNamed(MyRoute.servicesPage);
-            },
-          ),
-          ListTile(
-            title: Text(
-              'Vizyonumuz',
-              style: TextStyle(
-                fontSize: 18,
-                color: AppColors.kTextPrimary,
-              ),
-            ),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            title: Text(
-              'İletişim',
-              style: TextStyle(
-                fontSize: 18,
-                color: AppColors.kTextPrimary,
-              ),
-            ),
-            onTap: () {
-              Navigator.pop(context);
-            },
           ),
           Obx(
             () => Column(
@@ -126,7 +123,7 @@ class CustomDrawer extends StatelessWidget {
                       elevation: 16,
                       underline: Container(
                         height: 2,
-                        color: const Color(0xFF5d21d2),
+                        color: AppColors.kPurple,
                       ),
                       value: Get.find<MainController>().selectedLanguage.value,
                       onChanged: (String? newValue) {
@@ -153,6 +150,21 @@ class CustomDrawer extends StatelessWidget {
           )
         ],
       ),
+    );
+  }
+
+  ListTile sectionItem(String title, String route, bool isSelected) {
+    return ListTile(
+      title: Text(
+        title,
+        style: TextStyle(
+          fontSize: 18,
+          color: isSelected ? AppColors.kPurple : AppColors.kTextPrimary,
+        ),
+      ),
+      onTap: () {
+        Get.rootDelegate.offNamed(route);
+      },
     );
   }
 }

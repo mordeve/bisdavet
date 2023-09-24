@@ -20,4 +20,5 @@ class AppColors {
 
   static Color kTextPrimary = const Color(0xFF040222);
   static Color kTextWhite = Color.fromARGB(255, 245, 247, 246);
+  static Color kPurple = const Color(0xFF5d21d2);
 }

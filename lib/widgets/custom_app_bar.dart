@@ -9,12 +9,10 @@ import 'package:visdavet/widgets/long_toolbar.dart';
 
 class CustomAppBar extends StatefulWidget {
   final String title;
-  final List<Color> gradientColors;
 
   const CustomAppBar({
     super.key,
     required this.title,
-    required this.gradientColors,
   });
 
   @override
@@ -30,10 +28,11 @@ class _CustomAppBarState extends State<CustomAppBar> {
     return Container(
       height: 500,
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: widget.gradientColors,
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
+        image: const DecorationImage(
+          image: NetworkImage(
+              "https://marketplace.canva.com/EAFCytpuJ08/1/0/1600w/canva-green-wateroclor-leaf-linktree-background-0Mp0WYk6_8E.jpg"),
+          fit: BoxFit.cover,
+          opacity: 0.5,
         ),
         boxShadow: [
           BoxShadow(
@@ -43,6 +42,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
             offset: const Offset(0, 3),
           ),
         ],
+        color: Colors.white,
       ),
       child: Column(
         children: [
@@ -52,7 +52,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
-                  width: 80,
+                  width: 150 + 35,
                   child: Text(
                     widget.title,
                     style: GoogleFonts.permanentMarker(
@@ -63,8 +63,8 @@ class _CustomAppBarState extends State<CustomAppBar> {
                 ),
                 screenSize.width > Constants.maxScreenWidth
                     ? const LongToolbar()
-                    : DrawerToolbar(),
-                if (screenSize.width > 780) (const SizedBox(width: 80.0)),
+                    : const DrawerToolbar(),
+                if (screenSize.width > 1250) (const SizedBox(width: 200.0)),
               ],
             ),
           ),

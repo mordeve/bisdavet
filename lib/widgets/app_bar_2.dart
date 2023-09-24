@@ -1,4 +1,3 @@
-import 'package:visdavet/logic/main_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -48,14 +47,18 @@ class CustomAppBarBasicState extends State<CustomAppBarBasic> {
             padding: const EdgeInsets.all(16.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                IconButton(
-                  onPressed: () {
-                    Get.rootDelegate.toNamed(MyRoute.main);
-                  },
-                  icon: const Icon(
-                    Icons.arrow_back_ios,
-                    color: Color(0xFF5d21d2),
+                SizedBox(
+                  width: 35,
+                  child: IconButton(
+                    onPressed: () {
+                      Get.rootDelegate.toNamed(MyRoute.main);
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back_ios,
+                      color: Color(0xFF5d21d2),
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -71,7 +74,7 @@ class CustomAppBarBasicState extends State<CustomAppBarBasic> {
                 screenSize.width > Constants.maxScreenWidth
                     ? const LongToolbar()
                     : const DrawerToolbar(),
-                if (screenSize.width > 780) (const SizedBox(width: 80.0)),
+                if (screenSize.width > 1250) (const SizedBox(width: 200.0)),
               ],
             ),
           ),
