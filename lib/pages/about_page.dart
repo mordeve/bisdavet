@@ -31,7 +31,7 @@ class AboutPage extends StatelessWidget {
               Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("images/d3.png"),
+                    image: AssetImage("assets/images/d3.png"),
                     fit: BoxFit.cover,
                     opacity: 0.2,
                   ),
