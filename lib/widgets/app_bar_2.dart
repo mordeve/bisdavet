@@ -61,14 +61,11 @@ class CustomAppBarBasicState extends State<CustomAppBarBasic> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: 150,
-                  child: Text(
-                    widget.title,
-                    style: GoogleFonts.permanentMarker(
-                      fontSize: 20.0,
-                      color: const Color(0xFF5d21d2),
-                    ),
+                Text(
+                  widget.title,
+                  style: GoogleFonts.permanentMarker(
+                    fontSize: 20.0,
+                    color: const Color(0xFF5d21d2),
                   ),
                 ),
                 screenSize.width > Constants.maxScreenWidth

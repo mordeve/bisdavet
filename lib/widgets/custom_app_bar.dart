@@ -26,11 +26,20 @@ class _CustomAppBarState extends State<CustomAppBar> {
     final textFontSizeHeader = screenSize.width >= 400 ? 34.0 : 26.0;
     final textFontSizeMain = screenSize.width >= 400 ? 18.0 : 16.0;
     return Container(
-      height: 500,
+      height: 520,
       decoration: BoxDecoration(
-        image: const DecorationImage(
-          image: NetworkImage(
-              "https://marketplace.canva.com/EAFCytpuJ08/1/0/1600w/canva-green-wateroclor-leaf-linktree-background-0Mp0WYk6_8E.jpg"),
+        image: DecorationImage(
+          // image: NetworkImage(
+          //   "https://marketplace.canva.com/EAFCytpuJ08/1/0/1600w/canva-green-wateroclor-leaf-linktree-background-0Mp0WYk6_8E.jpg",
+          // ),
+
+          image: MediaQuery.of(context).size.width > Constants.maxScreenWidth
+              ? const AssetImage(
+                  "assets/images/d2.jpeg",
+                )
+              : const AssetImage(
+                  "assets/images/d1.png",
+                ),
           fit: BoxFit.cover,
           opacity: 0.5,
         ),
@@ -75,17 +84,21 @@ class _CustomAppBarState extends State<CustomAppBar> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width / 1.5 > 500
-                      ? 500
-                      : MediaQuery.of(context).size.width / 1.5,
-                  height: 170,
-                  child: Text(
-                    Constants.slogan,
-                    style: TextStyle(
-                      fontSize: textFontSizeHeader,
-                      color: const Color(0xFF040222),
-                      fontWeight: FontWeight.w600,
+                Padding(
+                  padding: const EdgeInsets.only(top: 20.0, left: 0.0),
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width / 1.5 > 500
+                        ? 500
+                        : MediaQuery.of(context).size.width / 1.5,
+                    height: 170,
+                    child: Text(
+                      Constants.slogan,
+                      style: TextStyle(
+                        fontSize: textFontSizeHeader,
+                        color: const Color(0xFF040222),
+                        fontWeight: FontWeight.w600,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
                   ),
                 ),

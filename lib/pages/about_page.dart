@@ -31,8 +31,7 @@ class AboutPage extends StatelessWidget {
               Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: NetworkImage(
-                        "https://img.freepik.com/free-vector/square-gold-frame-with-foliage-pattern-background-vector_53876-109054.jpg?w=2000"),
+                    image: AssetImage("images/d3.png"),
                     fit: BoxFit.cover,
                     opacity: 0.2,
                   ),

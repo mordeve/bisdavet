@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:visdavet/utils/colors.dart';
 import 'package:visdavet/utils/constants.dart';
 
@@ -13,7 +12,7 @@ class ServicesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double kTextSize = 18;
+    const double kTextSize = 20;
 
     return Scaffold(
       bottomNavigationBar: const Footer(),
@@ -32,10 +31,11 @@ class ServicesPage extends StatelessWidget {
               Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: NetworkImage(
-                        "https://marketplace.canva.com/EAFCytpuJ08/1/0/1600w/canva-green-wateroclor-leaf-linktree-background-0Mp0WYk6_8E.jpg"),
+                    image: AssetImage(
+                      "assets/images/bg1.png",
+                    ),
                     fit: BoxFit.cover,
-                    opacity: 0.6,
+                    opacity: 0.3,
                   ),
                   gradient: LinearGradient(
                     colors: [

@@ -75,7 +75,7 @@ class Constants {
   static const String servicesText6 = "Misafirlerinizle Etkileşim\n";
 
   static const String servicesText7 =
-      "Dijital davetlerin sunduğu avantajlardan biri, misafirlerinizle kolayca etkileşim kurmanızdır. RSVP'ler, yorumlar ve hatta özel anılar için paylaşım alanları oluşturarak davetinizi daha özel hale getirin.";
+      "Dijital davetlerin sunduğu avantajlardan biri, misafirlerinizle kolayca etkileşim kurmanızdır. Yanıtlar, yorumlar ve hatta özel anılar için paylaşım alanları oluşturarak davetinizi daha özel hale getirin.";
 
   static const String servicesText8 = "Çevre Dostu Seçenekler\n";
 
@@ -91,13 +91,13 @@ class Constants {
       "Yeşil bir geleceğe davetlisiniz! VisDavet ile çevreci düğünler ve etkinlikler için adım atın ve doğanın güzelliklerini koruyun. Siz hayal edin, biz gerçekleştirelim.";
 
   static const String servicesText13 =
-      "Daha fazla bilgi almak için bize ulaşın: info@visdavet.com";
+      "Daha fazla bilgi almak için bize ulaşın: visdavet@gmail.com";
 
   static const Map<String, String> sections = {
     "Ana Sayfa": "/",
     "Hakkımızda": "/about",
     "Hizmetlerimiz": "/services",
-    "Vizyonumuz": "/vision",
+    "Projelerimiz": "/projects",
     "İletişim": "/contact",
   };
 

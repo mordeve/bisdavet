@@ -1,5 +1,6 @@
 import 'package:visdavet/logic/main_controller.dart';
 import 'package:visdavet/pages/about_page.dart';
+import 'package:visdavet/pages/contact_page.dart';
 import 'package:visdavet/pages/home_page.dart';
 import 'package:get/get.dart';
 import 'package:visdavet/pages/services_page.dart';
@@ -8,7 +9,7 @@ abstract class MyRoute {
   static const String main = "/";
   static const String aboutPage = "/about";
   static const String servicesPage = "/services";
-  static const String visionPage = "/vision";
+  static const String projectsPage = "/projects";
   static const String contactPage = "/contact";
 }
 
@@ -42,6 +43,17 @@ abstract class GetRoute {
           MainController(),
         ).changeRoute(MyRoute.servicesPage);
         return const ServicesPage();
+      },
+      transition: Transition.noTransition,
+    ),
+    // pageQueries
+    GetPage(
+      name: MyRoute.contactPage,
+      page: () {
+        Get.put(
+          MainController(),
+        ).changeRoute(MyRoute.contactPage);
+        return const ContactPage();
       },
       transition: Transition.noTransition,
     ),
